@@ -1,0 +1,9 @@
+.mainLayout {
+    margin: 0;
+    padding: 0;
+}
+
+.mainLayout__page {
+    height: 100%;
+    width: 100%;
+}
