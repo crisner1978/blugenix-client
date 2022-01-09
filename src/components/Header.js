@@ -1,7 +1,10 @@
+import { Link } from "react-location"
+
 const Header = () => {
     return (
         <div>
-            <h1>I AM the Navbar</h1>
+            <Link to="/">Home</Link>
+            <Link to="/">Team</Link>
         </div>
     )
 }
