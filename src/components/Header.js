@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <div>
-            <h4>I AM the Navbar</h4>
+            <h1>I AM the Navbar</h1>
         </div>
     )
 }
