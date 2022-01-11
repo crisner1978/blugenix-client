@@ -1,5 +1,5 @@
 export const team = [
-    {name: "George"},
-    {name: "Jesse"},
-    {name: "Chris"},
+    {name: "george"},
+    {name: "jessee"},
+    {name: "chris"},
 ]

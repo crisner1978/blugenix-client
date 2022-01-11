@@ -1,3 +1,8 @@
+import useStore from "store";
+
 export default function AppProviders({ children }) {
-  return <div>{children}</div>;
+  const theme = (isDark) => (isDark ? "dark" : "light");
+  const isDarkTheme = useStore((state) => state.isDarkTheme);
+  
+  return <div className={`${theme(isDarkTheme)}`}>{children}</div>;
 }

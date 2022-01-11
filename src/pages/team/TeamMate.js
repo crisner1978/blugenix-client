@@ -2,10 +2,10 @@ import { useMatch } from "react-location"
 
 const TeamMate = () => {
     const { params: {name},} = useMatch()
-    console.log(name)
+    
     return (
         <div>
-            <h1>Hi I'm {name}</h1>
+            <h1 className="capitalize text-4xl">Hi I'm {name}</h1>
         </div>
     )
 }

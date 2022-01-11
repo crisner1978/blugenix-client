@@ -1,17 +1,19 @@
 import { Outlet, Router } from "react-location";
+import { ReactLocationDevtools } from "react-location-devtools";
 import { location, routes } from "router";
 import Footer from "./Footer";
 import Header from "./Header";
-import "./MainLayout.css"
 
 
 const MainLayout = () => {
+  
   return (
     <Router routes={routes} location={location}>
-      <div className="mainLayout">
+      <div className="">
         <Header />
-        <div className="mainLayout__page">
+        <div className="font-fancy">
           <Outlet />
+          <ReactLocationDevtools initialIsOpen={false}/>
         </div>
         <Footer />
       </div>
