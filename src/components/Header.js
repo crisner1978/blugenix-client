@@ -1,16 +1,15 @@
-import { Link, useRouter } from "react-location";
-import Dropdown from "./Dropdown";
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
-import useStore from "store";
+import { isDarkState } from "atoms/isDarkAtom";
+import { modalState } from "atoms/modalAtom";
+import { Link, useRouter } from "react-location";
+import { useRecoilState } from "recoil";
+import Dropdown from "./Dropdown";
+import FreeButton from "./FreeButton";
 
 const Header = () => {
-  const toggleTheme = useStore((s) => s.toggleTheme);
-  const isDarkTheme = useStore((s) => s.isDarkTheme);
-  const {
-    state: {
-      location: { pathname },
-    },
-  } = useRouter();
+  const [isDark, setIsDark] = useRecoilState(isDarkState);
+  const [open, setOpen] = useRecoilState(modalState);
+  const { state: { location: { pathname }, },} = useRouter();
 
   const name =
     pathname === "/team/chris"
@@ -40,25 +39,31 @@ const Header = () => {
         {/* Right Side */}
         <div className="flex justify-evenly items-end">
           <div className="flex items-center space-x-3 md:hidden">
-            {isDarkTheme ? (
-              <SunIcon onClick={toggleTheme} className="navSunIcon mt-1" />
+            {isDark ? (
+              <SunIcon
+              onClick={() => setIsDark(!isDark)}
+                className="navSunIcon mt-1 animate-pulse"
+              />
             ) : (
-              <MoonIcon onClick={toggleTheme} className="navMoonIcon mt-1" />
+              <MoonIcon
+              onClick={() => setIsDark(!isDark)}
+                className="navMoonIcon mt-1 animate-pulse"
+              />
             )}
 
             <Dropdown />
           </div>
 
           <ul className="hidden md:flex items-center space-x-5">
-            {isDarkTheme ? (
+            {isDark ? (
               <SunIcon
-                onClick={toggleTheme}
-                className="navSunIcon hidden md:flex"
+                onClick={() => setIsDark(!isDark)}
+                className="navSunIcon hidden md:flex animate-pulse"
               />
             ) : (
               <MoonIcon
-                onClick={toggleTheme}
-                className="navMoonIcon hidden md:flex"
+              onClick={() => setIsDark(!isDark)}
+                className="navMoonIcon hidden md:flex animate-pulse"
               />
             )}{" "}
             <li
@@ -84,9 +89,19 @@ const Header = () => {
               <Link to="/forms">forms</Link>
             </li>
           </ul>
-          <div className="navBtn">
-            <button className="text-gray-100 text-xl md:text-base">Free Consultation</button>
-          </div>
+          <a
+            className="navTel text-gray-100 will-change-scroll via-top-0"
+            href="tel:+5617776077"
+          >
+            561-777-6077
+          </a>
+
+          <FreeButton
+            description="Free Consultation"
+            style_1="navBtn hidden md:inline-block"
+            style_2="text-gray-100"
+            onClick={() => setOpen(true)}
+          />
         </div>
       </nav>
     </header>

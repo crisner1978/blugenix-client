@@ -3,6 +3,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        "md-tel": "900px",
+      },
       fontFamily: {
         deca: ["Lexend Deca"],
         fancy: ["Red Hat Display"],

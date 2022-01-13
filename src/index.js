@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'index.css';
-import App from 'App';
-import AppProviders from 'AppProviders';
+import App from "App";
+import "index.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil";
 
 ReactDOM.render(
-  <AppProviders>
-    <App />
-  </AppProviders>,
-  document.getElementById('root')
+  <RecoilRoot>
+      <App />
+  </RecoilRoot>,
+  document.getElementById("root")
 );
-
