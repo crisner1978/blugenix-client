@@ -58,6 +58,15 @@ export default function HomePage() {
 
       <div className=" h-full flex flex-col justify-center items-center pt-20 font-fancy space-y-5">
         <h1 className="text-3xl objec">I'm the Home Page Let's Do This</h1>
+        {/* <div className="p-5 bg-white rounded-2xl flex items-center justify-center">
+          <img className="h-10" src="icon-optimization.svg" alt="" />
+        </div>
+        <div className="p-5 bg-white rounded-2xl flex items-center justify-center">
+          <img className="h-10" src="muscle.png" alt="" />
+        </div>
+        <div className="p-5 bg-white rounded-2xl flex items-center justify-center">
+          <img className="h-10 text-blue-700 " src="bedBlue.png" alt="" />
+        </div> */}
         <h2 className="text-3xl">I'm the Home Page Let's Go</h2>
         <h3 className="text-3xl">I'm the Home Page Yes</h3>
         <h4 className="text-3xl">I'm the Home Page Oh Yeah</h4>

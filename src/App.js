@@ -8,8 +8,8 @@ import { useRecoilState } from "recoil";
 import { location, routes } from "router";
 
 const App = () => {
-  const [isDark, setIsDark] = useRecoilState(isDarkState);
-  const theme = (isDarked) => (isDarked ? "dark" : "light");
+  const [isDark] = useRecoilState(isDarkState);
+  const theme = (isDark) => (isDark ? "dark" : "light");
   return (
     <Router routes={routes} location={location}>
       <div className={`${theme(isDark)}`}>
@@ -18,7 +18,7 @@ const App = () => {
           <Outlet />
           <ReactLocationDevtools initialIsOpen={false} />
           <Footer />
-          <Modal />
+          <Modal isDark={isDark} theme={theme} />
         </div>
       </div>
     </Router>
