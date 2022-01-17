@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         deca: ["Lexend Deca"],
         fancy: ["Red Hat Display"],
+        avenir: ['Avenir Next'],
       }
     },
   },

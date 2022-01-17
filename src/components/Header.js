@@ -1,13 +1,14 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import { isDarkState } from "atoms/isDarkAtom";
 import { modalState } from "atoms/modalAtom";
+import useDarkTheme from "lib/useDarkTheme";
 import { Link, useRouter } from "react-location";
 import { useRecoilState } from "recoil";
 import Dropdown from "./Dropdown";
 import FreeButton from "./FreeButton";
 
 const Header = () => {
-  const [isDark, setIsDark] = useRecoilState(isDarkState);
+  const [theme, toggleTheme] = useDarkTheme();
   const [open, setOpen] = useRecoilState(modalState);
   const { state: { location: { pathname }, },} = useRouter();
 
@@ -39,14 +40,14 @@ const Header = () => {
         {/* Right Side */}
         <div className="flex justify-evenly items-end">
           <div className="flex items-center space-x-3 md:hidden">
-            {isDark ? (
+            {theme ? (
               <SunIcon
-              onClick={() => setIsDark(!isDark)}
+              onClick={toggleTheme}
                 className="navSunIcon mt-1 animate-pulse"
               />
             ) : (
               <MoonIcon
-              onClick={() => setIsDark(!isDark)}
+              onClick={toggleTheme}
                 className="navMoonIcon mt-1 animate-pulse"
               />
             )}
@@ -55,14 +56,14 @@ const Header = () => {
           </div>
 
           <ul className="hidden md:flex items-center space-x-5">
-            {isDark ? (
+            {theme ? (
               <SunIcon
-                onClick={() => setIsDark(!isDark)}
+                onClick={toggleTheme}
                 className="navSunIcon hidden md:flex animate-pulse"
               />
             ) : (
               <MoonIcon
-              onClick={() => setIsDark(!isDark)}
+              onClick={toggleTheme}
                 className="navMoonIcon hidden md:flex animate-pulse"
               />
             )}{" "}

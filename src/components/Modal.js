@@ -9,7 +9,7 @@ import { useRecoilState } from "recoil";
 // import { useMutation } from "react-query";
 // import { formatPhoneNumber } from "react-phone-number-input";
 
-const Modal = ({ isDark }) => {
+const Modal = ({ theme }) => {
   const [open, setOpen] = useRecoilState(modalState);
   const {
     register,
@@ -88,7 +88,9 @@ const Modal = ({ isDark }) => {
           >
             <div
               className={`${
-                isDark ? "bg-stone-900 text-gray-400" : "bg-white text-gray-500"
+                theme === "dark"
+                  ? "bg-stone-900 text-gray-400"
+                  : "bg-white text-gray-500"
               } font-fancy inline-block align-middle rounded-xl
                             px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all my-8 sm:max-w-sm sm:w-full sm:p-6`}
             >
@@ -113,7 +115,9 @@ const Modal = ({ isDark }) => {
                       },
                     })}
                     placeholder="John"
-                    className={`${isDark ? "formInputDark" : "formInput"}`}
+                    className={`${
+                      theme === "dark" ? "formInputDark" : "formInput"
+                    }`}
                     type="text"
                     name="first"
                     id="first"
@@ -137,7 +141,9 @@ const Modal = ({ isDark }) => {
                       },
                     })}
                     placeholder="Doe"
-                    className={`${isDark ? "formInputDark" : "formInput"}`}
+                    className={`${
+                      theme === "dark" ? "formInputDark" : "formInput"
+                    }`}
                     type="text"
                     name="last"
                     id="last"
@@ -150,7 +156,9 @@ const Modal = ({ isDark }) => {
                   </label>
                   <PhoneInput
                     placeholder="(555) 555-5555"
-                    className={`${isDark ? "formInputDark" : "formInput"}`}
+                    className={`${
+                      theme === "dark" ? "formInputDark" : "formInput"
+                    }`}
                     name="phone"
                     control={control}
                     rules={{
@@ -177,7 +185,9 @@ const Modal = ({ isDark }) => {
                       },
                     })}
                     placeholder="johndoe@example.com"
-                    className={`${isDark ? "formInputDark" : "formInput"}`}
+                    className={`${
+                      theme === "dark" ? "formInputDark" : "formInput"
+                    }`}
                     type="text"
                     name="email"
                     id="email"
@@ -201,7 +211,9 @@ const Modal = ({ isDark }) => {
                       },
                     })}
                     placeholder="How do I get started on Testosterone and HGH therapy?"
-                    className={`${isDark ? "formInputDark" : "formInput"}`}
+                    className={`${
+                      theme === "dark" ? "formInputDark" : "formInput"
+                    }`}
                     name="message"
                     id="message"
                     cols="30"

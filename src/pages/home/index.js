@@ -31,15 +31,20 @@ export default function HomePage() {
       <Section
         style_section="mt-[50px] md:flex-row-reverse items-center md:flex flex flex-col-reverse max-w-7xl mx-auto md:gap-5"
         heading="What is Blugenix"
-        subheading="Blugenix uses precision medicine to get real results. Increased stamina. Lower stress levels. Improved sleep. Increased concentration and desire."
-        description="All while optimizing your body composition and slowing down your biological aging process. 
-               
-                      Our phlebotomists come to our Clients to collect 87 different biomarkers to get a baseline 
-                      of your health. Each Client has a Performance Health Team that takes this data and evaluates 
-                      it in combination with other tests included in our Performance Health Assessment, to develop 
-                      a personalized, monitored health program designed for you to reach your health goals. 
-                      
-                      Since 1997, our proven age management program has helped over 33,000 Clients live their best lives."
+        subheading="Blugenix uses precision and restorative medicine to get real results. Increased energy. Enhanced sex drive. Improved sleep. Increased sense of well-being and focus."
+        para_1="All while maximizing your body composition, improving lean muscle mass and accelerating fat metabolism."
+        para_2="The initial comprehensive laboratory panel will access your current hormone levels as well as your health panels. With this data, 
+        our team will map out a personalized, doctor monitored therapy program designed for you to achieve your health goals."
+        para_3="Our Hormone Replacement Therapies will restore your hormone levels back to where they were in the prime of your life - 
+        allowing you to live your best life no matter your age."
+        //               We help optimize our clients' hormone levels, providing powerful benefits from increased energy and 
+        //               fat burning to improve sex drive and performance. 
+        //               We're anti-aging experts focused on providing Hormone Replacement Therapy 
+        //               to turn back your biological clock and provide powerful benefits. Feel completely rejuvenated and revitalized,
+        //               We provide individualized, 
+        //               Bio-Identical treatments to bring hormone levels back to where they were in the prime of your life - 
+        //               allowing you to live your best life no matter your age.
+        //               "
         component={
           <FreeButton
             style_1="text-center md:text-left md:-ml-4 text-white dark:text-gray-200 pt-8"
@@ -62,10 +67,10 @@ export default function HomePage() {
           <img className="h-10" src="icon-optimization.svg" alt="" />
         </div>
         <div className="p-5 bg-white rounded-2xl flex items-center justify-center">
-          <img className="h-10" src="muscle.png" alt="" />
+          <img className="h-10 text-blue-700" src="muscle.png" alt="" />
         </div>
         <div className="p-5 bg-white rounded-2xl flex items-center justify-center">
-          <img className="h-10 text-blue-700 " src="bedBlue.png" alt="" />
+          <img className="h-10" src="bedBlue.png" alt="" />
         </div> */}
         <h2 className="text-3xl">I'm the Home Page Let's Go</h2>
         <h3 className="text-3xl">I'm the Home Page Yes</h3>

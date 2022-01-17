@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: Avenir Next;
+    src: url('/public/fonts/AvenirNext-Regular.ttf')
+  }
+}
+
 @layer components {
   /* Header/Navbar */
   .header {
