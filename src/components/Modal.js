@@ -6,50 +6,53 @@ import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-number-input/react-hook-form-input";
 import "react-phone-number-input/style.css";
 import { useRecoilState } from "recoil";
-// import { useMutation } from "react-query";
-// import { formatPhoneNumber } from "react-phone-number-input";
+import { useMutation } from "react-query";
+import { formatPhoneNumber } from "react-phone-number-input";
 
 const Modal = ({ theme }) => {
   const [open, setOpen] = useRecoilState(modalState);
   const {
     register,
     handleSubmit,
-    // reset,
+    reset,
     control,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
 
-  // const { mutateAsync, isError } = useMutation(
-  //   (newMessage) =>
-  //     fetch("/api/mail", {
-  //       method: "POST",
-  //       body: JSON.stringify(newMessage),
-  //     }),
-  //   {
-  //     onSuccess: () => {
-  //       setOpen(false);
-  //       reset();
-  //     },
-  //     onError: (error) => {
-  //       console.log(error);
-  //     },
-  //   }
-  // );
+  const { mutateAsync } = useMutation(
+    (newMessage) =>
+      fetch("/api/consult", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMessage),
+      }),
+    {
+      onSuccess: () => {
+        console.log("Consult Requested")
+        setOpen(false);
+        reset();
+      },
+      onError: (error) => {
+        console.log(error);
+      },
+    }
+  );
 
-  // async function onSubmit(data) {
-  //   const { name, email, phone, message } = data;
+  async function onSubmit(data) {
+    const { firstName, lastName, email, phone, message } = data;
 
-  //   const newMessage = {
-  //     name,
-  //     email,
-  //     phone: formatPhoneNumber(phone),
-  //     message,
-  //   };
+    const newMessage = {
+      firstName,
+      lastName,
+      email,
+      phone: formatPhoneNumber(phone),
+      message,
+    };
 
-  //   mutateAsync(newMessage);
-  // }
-
-  const onSubmit = () => {};
+    mutateAsync(newMessage);
+  }
 
   return (
     <Transition show={open} as={Fragment}>
@@ -99,11 +102,11 @@ const Modal = ({ theme }) => {
                 className="flex flex-col space-y-1"
               >
                 <div className="inputWrapper">
-                  <label className="formLabel" htmlFor="first">
+                  <label className="formLabel" htmlFor="firstName">
                     First Name
                   </label>
                   <input
-                    {...register("first", {
+                    {...register("firstName", {
                       required: "REQUIRED",
                       minLength: {
                         value: 2,
@@ -119,17 +122,17 @@ const Modal = ({ theme }) => {
                       theme === "dark" ? "formInputDark" : "formInput"
                     }`}
                     type="text"
-                    name="first"
-                    id="first"
+                    name="firstName"
+                    id="firstName"
                   />
-                  <span className="formErrorMsg">{errors.first?.message}</span>
+                  <span className="formErrorMsg">{errors.firstName?.message}</span>
                 </div>
                 <div className="inputWrapper">
-                  <label className="formLabel" htmlFor="last">
+                  <label className="formLabel" htmlFor="lastName">
                     Last Name
                   </label>
                   <input
-                    {...register("last", {
+                    {...register("lastName", {
                       required: "REQUIRED",
                       minLength: {
                         value: 2,
@@ -145,10 +148,10 @@ const Modal = ({ theme }) => {
                       theme === "dark" ? "formInputDark" : "formInput"
                     }`}
                     type="text"
-                    name="last"
-                    id="last"
+                    name="lastName"
+                    id="lastName"
                   />
-                  <span className="formErrorMsg">{errors.last?.message}</span>
+                  <span className="formErrorMsg">{errors.lastName?.message}</span>
                 </div>
                 <div className="inputWrapper">
                   <label className="formLabel" htmlFor="Phone">
@@ -199,17 +202,7 @@ const Modal = ({ theme }) => {
                     Message
                   </label>
                   <textarea
-                    {...register("message", {
-                      required: "REQUIRED",
-                      minLength: {
-                        value: 5,
-                        message: "MORE THAN 5 CHARACTERS",
-                      },
-                      maxLength: {
-                        value: 500,
-                        message: "LESS THAN 500 CHARACTERS",
-                      },
-                    })}
+                    {...register("message")}
                     placeholder="How do I get started on Testosterone and HGH therapy?"
                     className={`${
                       theme === "dark" ? "formInputDark" : "formInput"

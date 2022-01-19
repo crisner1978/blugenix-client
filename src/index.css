@@ -89,4 +89,9 @@
   .formErrorMsg {
     @apply absolute right-1 text-red-600 font-deca font-black text-[12px] tracking-tight
   }
+
+  /* Home Page */
+  .benefit_icon {
+    @apply w-20 h-20 bg-white rounded-2xl flex items-center justify-center drop-shadow-2xl shadow-xl mb-5
+  }
 }
