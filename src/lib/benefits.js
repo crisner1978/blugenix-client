@@ -31,7 +31,7 @@ export const benefits = [
     },
     {
         id: 6,
-        title: "Optimize Body Composition",
+        title: "Shed Bodyfat",
         img: "weight-scale.svg",
         info: "Reverse a slow and steady weight gain and return to your optimal body composition.",
     },
