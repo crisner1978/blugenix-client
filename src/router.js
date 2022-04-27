@@ -6,7 +6,7 @@ import { ReactLocation } from "react-location";
 
 export const routes = [
   {
-    path: "/",
+    path: "/blugenix-client",
     element: <HomePage />,
   },
   {

@@ -27,10 +27,10 @@ const Header = () => {
       <nav className="nav">
         {/* Left Side */}
         <div>
-          <Link to="/">
+          <Link to="/blugenix-client">
             <span
               className={`navLogo ${
-                pathname === "/" && "navLogoActive dark:text-transparent"
+                pathname === "/blugenix-client" && "navLogoActive dark:text-transparent"
               }`}
             >
               BLUGENIX
