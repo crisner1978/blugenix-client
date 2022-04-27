@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/blugenix-client/static/css/main.63f3cc97.css",
-    "main.js": "/blugenix-client/static/js/main.ac7e22ed.js",
-    "static/media/AvenirNext-Regular.ttf": "/blugenix-client/static/media/AvenirNext-Regular.f50c4db7534c895ff909.ttf",
-    "index.html": "/blugenix-client/index.html",
-    "main.63f3cc97.css.map": "/blugenix-client/static/css/main.63f3cc97.css.map",
-    "main.ac7e22ed.js.map": "/blugenix-client/static/js/main.ac7e22ed.js.map"
+    "main.css": "/static/css/main.f7512ebb.css",
+    "main.js": "/static/js/main.ac7e22ed.js",
+    "static/media/AvenirNext-Regular.ttf": "/static/media/AvenirNext-Regular.f50c4db7534c895ff909.ttf",
+    "index.html": "/index.html",
+    "main.f7512ebb.css.map": "/static/css/main.f7512ebb.css.map",
+    "main.ac7e22ed.js.map": "/static/js/main.ac7e22ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.63f3cc97.css",
+    "static/css/main.f7512ebb.css",
     "static/js/main.ac7e22ed.js"
   ]
 }
