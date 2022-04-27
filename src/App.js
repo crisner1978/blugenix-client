@@ -17,7 +17,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <Router routes={routes} location={location}>
       <div className={`${theme}`}>
-        <div className="min-h-screen bg-gray-100 dark:bg-black dark:text-gray-200 text-gray-700 font-deca">
+        <div className="min-h-screen bg-gradient-to-b from-gray-50  to-gray-100 dark:from-zinc-900 dark:to-slate-900 dark:text-gray-200 text-gray-700 font-deca">
           <Header />
           <Outlet />
           <ReactLocationDevtools initialIsOpen={false} />

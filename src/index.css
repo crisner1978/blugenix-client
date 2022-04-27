@@ -94,4 +94,9 @@
   .benefit_icon {
     @apply w-20 h-20 bg-white rounded-2xl flex items-center justify-center drop-shadow-2xl shadow-xl mb-5
   }
+
+  .steps {
+    @apply  transition-transform duration-200 scale-[1.009]
+    ease-in-out group-hover:scale-110 rounded-3xl
+  }
 }

@@ -11,6 +11,7 @@ const Header = () => {
   const [theme, toggleTheme] = useDarkTheme();
   const [open, setOpen] = useRecoilState(modalState);
   const { state: { location: { pathname }, },} = useRouter();
+  console.log("theme", theme)
 
   const name =
     pathname === "/team/chris"
@@ -40,7 +41,7 @@ const Header = () => {
         {/* Right Side */}
         <div className="flex justify-evenly items-end">
           <div className="flex items-center space-x-3 md:hidden">
-            {theme ? (
+            {theme === "dark" ? (
               <SunIcon
               onClick={toggleTheme}
                 className="navSunIcon mt-1 animate-pulse"
@@ -56,7 +57,7 @@ const Header = () => {
           </div>
 
           <ul className="hidden md:flex items-center space-x-5">
-            {theme ? (
+            {theme === "dark" ? (
               <SunIcon
                 onClick={toggleTheme}
                 className="navSunIcon hidden md:flex animate-pulse"
